@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'application#cafe'
   get "seets/index_user" => "seets#index_user"
   resources :seets
   resources :clients
