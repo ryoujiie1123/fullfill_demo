@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>姓:</strong>
   <%= @user.last_name %>
 </p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>名:</strong>
   <%= @user.first_name %>
 </p>
-
+<% if @current_user.id == @user.id %>
 <p>
-  <strong>Email:</strong>
+  <strong>メールアドレス:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Sex:</strong>
+  <strong>パスワード:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>性別:</strong>
   <%= @user.sex %>
 </p>
 
 <p>
-  <strong>Adress:</strong>
+  <strong>住所:</strong>
   <%= @user.adress %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '編集', edit_user_path(@user) %> |
+<% end %>
+<%= link_to '戻る', users_path %>

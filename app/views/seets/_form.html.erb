@@ -1,0 +1,27 @@
+<%= form_with(model: seet, local: true) do |form| %>
+  <% if seet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seet.errors.count, "error") %> prohibited this seet from being saved:</h2>
+
+      <ul>
+      <% seet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :店舗ID %>
+    <%= form.number_field :client_id, id: :seet_client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :残席数 %>
+    <%= form.number_field :remain_seat, id: :seet_remain_seat %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

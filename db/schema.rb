@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200516090603) do
+ActiveRecord::Schema.define(version: 20200525074127) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "max_seat"
     t.integer "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "image_name"
+  end
+
+  create_table "matchings", force: :cascade do |t|
+    t.integer "client_id"
+    t.integer "user_id"
+    t.integer "seet_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seets", force: :cascade do |t|
+    t.integer "client_id"
+    t.integer "remain_seat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,6 +47,7 @@ ActiveRecord::Schema.define(version: 20200516090603) do
     t.string "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
   end
 
 end

@@ -12,31 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label :姓 %>
     <%= form.text_field :last_name, id: :user_last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label :名 %>
     <%= form.text_field :first_name, id: :user_first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :Email %>
     <%= form.text_field :email, id: :user_email %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :パスワード %>
+    <%= form.text_field :password, id: :user_password %>
   </div>
 
   <div class="field">
-    <%= form.label :sex %>
+    <%= form.label :性別 %>
     <%= form.number_field :sex, id: :user_sex %>
   </div>
 
   <div class="field">
-    <%= form.label :adress %>
+    <%= form.label :住所 %>
     <%= form.text_field :adress, id: :user_adress %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録" %>
   </div>
 <% end %>

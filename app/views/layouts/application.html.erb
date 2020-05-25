@@ -9,6 +9,49 @@
   </head>
 
   <body>
+    <div class="wrapper">
+    <div class="main-header">  
+      <header>
+        <%= link_to("FullFill admin","/seets") %>
+        
+        <% if @current_user %>
+          <li>
+            <%= link_to(@current_user.last_name + " "+@current_user.first_name, "/users/#{@current_user.id}") %>
+          </li>
+        <% end %>
+      </header>
+    </div>
+    <div class="main-wrapper">
     <%= yield %>
+    </div>
+    <div class="main-footer"> 
+    <footer>
+      <% if @current_user %>
+      <li>
+        <%= link_to("ユーザー用検索ページ","/seets/index_user") %>
+      </li>
+      <li>
+        <%= link_to("探す","/seets") %>
+      </li>
+      <li>
+        <%= link_to("登録店","/clients") %>
+      </li>
+      <li>
+        <%= link_to("登録ユーザー","/users") %>
+      </li>
+      <li>
+        <%= link_to("ログアウト","/logout", {method: :post}) %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to("ログイン","/login") %>
+      </li>
+      <li>
+        <%= link_to("新規登録","/users/new") %>
+      </li>
+      <% end %>
+      </footer>
+       </div>
+      </div>
   </body>
 </html>

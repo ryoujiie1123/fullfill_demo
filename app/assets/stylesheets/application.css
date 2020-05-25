@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+header{
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: fixed;
+    top:0;
+}
+
+.main-header a:link,.main-header a:visited,.main-header a:hover,.main-header a:active,.main-footer a:link,.main-footer a:visited,.main-footer a:hover,.main-footer a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper{
+    min-height: 100vh;
+    margin-top:78px;
+    /*padding-top: 1px;*/
+}
+
+.main-wrapper{
+    margin-top: 100px;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+
+footer{
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    /*position: absolute;*/
+    bottom: 0; /*下に固定*/
+    position: fixed;
+}
+
+.main-footer li{
+    float:left;
+    text-align:center;
+    list-style: none;
+    width:33%;
+    /*padding:10px;*/
+}

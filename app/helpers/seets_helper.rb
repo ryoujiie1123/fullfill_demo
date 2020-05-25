@@ -1,0 +1,2 @@
+module SeetsHelper
+end

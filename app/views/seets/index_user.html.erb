@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="seets-table">
+<h1>お店を探す</h1>
+
+<div class="seet_boxes">
+    <% @seets.each do |seet| %>
+    <a href ="<%= "/clients/#{seet.client.id}" %>">
+      <div class="seet_box">
+        <img src="<%= "/client_images/#{seet.client.image_name}" %>">
+        <h3><%= seet.client.name %></h3>
+        <p><%= seet.client.title  %></p>
+        <h2><%= seet.remain_seat %></h2>
+      </div>
+      </a>
+    <% end %>
+</div>
+</div>

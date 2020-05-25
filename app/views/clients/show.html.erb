@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
+<div class="client_show">
 <p>
-  <strong>Name:</strong>
-  <%= @client.name %>
+  〜<%= @client.title %>〜
 </p>
+  <h1><%= @client.name %></h1>
+  <img src="<%= "/client_images/#{@client.image_name}" %>">
+
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Email:</strong>
@@ -11,14 +13,18 @@
 </p>
 
 <p>
-  <strong>Max seat:</strong>
+  <strong>最大席数:</strong>
   <%= @client.max_seat %>
 </p>
 
 <p>
-  <strong>Phone number:</strong>
-  <%= @client.phone_number %>
+  <strong>電話番号:</strong>
+  <a href="tel:"><%= @client.phone_number %></a>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<button>
+  マッチング
+</button>
+<%= link_to '編集', edit_client_path(@client) %> |
+<%= link_to '戻る', clients_path %>
+</div>

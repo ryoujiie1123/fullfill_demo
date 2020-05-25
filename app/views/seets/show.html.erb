@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @seet.client_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @client.name %>
+</p>
+
+<p>
+  <strong>Remain seat:</strong>
+  <%= @seet.remain_seat %>
+</p>
+
+<%= link_to 'Edit', edit_seet_path(@seet) %> |
+<%= link_to 'Back', seets_path %>
