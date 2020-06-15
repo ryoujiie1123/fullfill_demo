@@ -22,7 +22,11 @@
 
 <p>
   <strong>性別:</strong>
-  <%= @user.sex %>
+  <% if @user.sex == 0 %>
+            <%= '男性' %>
+            <% else %>
+            <%= '女性' %>
+            <% end %>
 </p>
 
 <p>

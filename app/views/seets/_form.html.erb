@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :店舗ID %>
-    <%= form.number_field :client_id, id: :seet_client_id %>
+    <%= form.label :店舗 %>
+      <%= form.select :client_id, Client.all.collect { |c| [ c.name, c.id ] }, {}, {class: 'form-control'} %>
   </div>
 
   <div class="field">

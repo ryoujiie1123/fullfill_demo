@@ -18,6 +18,10 @@
           <li>
             <%= link_to(@current_user.last_name + " "+@current_user.first_name, "/users/#{@current_user.id}") %>
           </li>
+          <% else %>
+          <li>
+            
+          </li>
         <% end %>
       </header>
     </div>

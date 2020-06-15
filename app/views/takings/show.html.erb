@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @taking.client_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @client.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @taking.user_id %>
+</p>
+
+<p>
+  <strong>Seet:</strong>
+  <%= @taking.seet_id %>
+</p>
+
+<p>
+  <strong>Seet number:</strong>
+  <%= @taking.seet_number %>
+</p>
+
+<%= link_to 'Edit', edit_taking_path(@taking) %> |
+<%= link_to 'Back', takings_path %>

@@ -44,31 +44,31 @@ class ClientsController < ApplicationController
     @client = Client.find_by(id: params[:id])
     # @client.name = params[:name]
     # @client.email = params[:email]
-    if params[:image]
-      @client.image_name = "#{@client.id}.jpg"
-      image=params[:image]
-      File.binwrite("public/client_images/#{@client.image_name}", image.read)
-    end
-    
-    if @client.save
-      flash[:notice] = "店舗情報を編集しました"
-      redirect_to("/clients/#{@client.id}")
-    else
-      render("clients/edit")
-    end
-    # respond_to do |format|
-    #   if @client.update(client_params)
-    #     # @client.image_name = "#{@client.id}.jpg"
-    #     image=params[:image]
-    #     File.binwrite("public/client_images/#{@client.image_name}", image)
-    #     format.html { redirect_to @client, notice: '店舗情報をアップデートしました。' }
-    #     format.json { render :show, status: :ok, location: @client }
-        
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @client.errors, status: :unprocessable_entity }
-    #   end
+    # if params[:image]
+    #   @client.image_name = "#{@client.id}.jpg"
+    #   image=params[:image]
+    #   File.binwrite("public/client_images/#{@client.image_name}", image.read)
     # end
+    
+    # if @client.save
+    #   flash[:notice] = "店舗情報を編集しました"
+    #   redirect_to("/clients/#{@client.id}")
+    # else
+    #   render("clients/edit")
+    # end
+    respond_to do |format|
+      if @client.update(client_params)
+        # @client.image_name = "#{@client.id}.jpg"
+        image=params[:image]
+        File.binwrite("public/client_images/#{@client.image_name}", image)
+        format.html { redirect_to @client, notice: '店舗情報をアップデートしました。' }
+        format.json { render :show, status: :ok, location: @client }
+        
+      else
+        format.html { render :edit }
+        format.json { render json: @client.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /clients/1

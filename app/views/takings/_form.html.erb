@@ -1,0 +1,39 @@
+<%= form_with(model: taking, local: true) do |form| %>
+  <% if taking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(taking.errors.count, "error") %> prohibited this taking from being saved:</h2>
+
+      <ul>
+      <% taking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :店舗 %>
+      <%= form.select :client_id, Client.all.collect { |c| [ c.name, c.id ] }, {}, {class: 'form-control'} %>
+  </div>
+  
+  
+
+  <div class="field">
+    <%= form.label :ユーザー名 %>
+    <%= form.select :user_id, User.all.collect { |u| [ u.last_name+ u.first_name, u.id ] }, {}, {class: 'form-control'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seet_id %>
+    <%= form.number_field :seet_id, id: :taking_seet_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seet_number %>
+    <%= form.number_field :seet_number, id: :taking_seet_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -20,7 +20,11 @@
         <td><%= user.last_name %></td>
         <td><%= user.first_name %></td>
         <td><%= user.email %></td>
-        <td><%= user.sex %></td>
+        <td><% if user.sex == 0 %>
+            <%= '男性' %>
+            <% else %>
+            <%= '女性' %>
+            <% end %></td>
         <td><%= user.adress %></td>
         <td><%= link_to '詳細', user %></td>
         <!--<td><%= link_to '編集', edit_user_path(user) %></td>-->
